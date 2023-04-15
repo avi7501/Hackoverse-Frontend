@@ -1,8 +1,8 @@
 import React from 'react'
-
+import Landing from '../components/Landing'
 const Compiler = () => {
   return (
-    <div>Compiler</div>
+    <div className='w-full'><Landing /></div>
   )
 }
 

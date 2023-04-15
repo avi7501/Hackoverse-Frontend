@@ -26,7 +26,7 @@ const App = () => {
       {!location.pathname.includes("/logged/") && <NavBar />}
       {location.pathname.includes("/logged/") && <Sidebar />}
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Home/>} />
         {/* element={<Events/>}/> */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

@@ -16,7 +16,7 @@ export const Sidebar = () => {
   return (
     <>
     {type==="learner" && 
-    <aside className="flex flex-col w-64 h-screen px-5 py-8 overflow-y-auto bg-white  dark:bg-black/20 backdrop-blur-3xl dark:border-gray-700">
+    <aside className="flex flex-col w-64 h-full px-5 py-8 overflow-y-auto bg-white  dark:bg-black/20 backdrop-blur-3xl dark:border-gray-700">
       <a className="flex flex-row text-white hover:text-white text-2xl justify-start
        items-center gap-4" href="/">
       <img src={Logo} className="w-[30px] h-[30px]" /> <p>InSynk</p>
