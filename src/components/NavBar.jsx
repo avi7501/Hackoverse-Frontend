@@ -8,19 +8,20 @@ const NavBar = () => {
     <>
       {/* Displays the below navigation for desktop devices */}
       <nav className="hidden backdrop-blur-xl fixed z-50 md:flex lg:flex  top-0 w-full px-6 py-2 ">
-        <div className="w-24 ">
-          <a href="/">
+        <div className="w-24 ml-5 ">
+          <a className="flex flex-row justify-center items-center gap-4 text-white text-3xl hover:text-white" href="/">
             <img
               src={Logo}
               className="lg:w-[60px] lg:h-[60px] w-[40px] h-[40px]"
               alt="logo"
             />
+            InSynk
           </a>
         </div>
         <div className="flex justify-end items-center w-[95%] ">
           <ul className="flex lg:text-lg  text-sm text-white flex-row lg:gap-6 gap-2 w-[50vw] justify-end">
             <li>
-              <Link className="text-white  hover:text-red-700" to="/">
+              <Link className="text-white  hover:text-[#69CFC3] rounded-xl hover:bg-black/20  p-3" to="/">
                 Home
               </Link>
             </li>
@@ -45,7 +46,7 @@ const NavBar = () => {
       </nav>
 
       {/* Displays the below navigation for mobile devices */}
-      <nav className="z-50 w-full shadow-xl  backdrop-blur-xl pb-4 pt-2  fixed block md:hidden lg:hidden">
+      <nav className="z-50 w-full shadow-xl  backdrop-blur-xl pb-4 pt-2 text-center  fixed block md:hidden lg:hidden">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -53,11 +54,12 @@ const NavBar = () => {
                 <h2 className="text-2xl font-bold">
                   {" "}
                   <img src={Logo} className="w-[50px] h-[50px]" />
+                  InSynk
                 </h2>
               </Link>
               <div className="md:hidden">
                 <button
-                  className="p-2 text-white rounded-md outline-none focus:border-gray-400 focus:border"
+                  className="p-2 text-white bg-black/30 backdrop-blur-xl rounded-md outline-none focus:border-gray-400 focus:border"
                   onClick={() => setNavbar(!navbar)}
                 >
                   {navbar ? (
@@ -79,7 +81,7 @@ const NavBar = () => {
                       className="w-6 h-6"
                       fill="white"
                       viewBox="0 0 24 24"
-                      stroke="currentColor"
+                      stroke="white"
                       strokeWidth={2}
                     >
                       <path
@@ -102,7 +104,7 @@ const NavBar = () => {
               <ul className="items-center   justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                 <li>
                   <Link
-                    className="text-white hover:text-red-700"
+                    className="text-white hover:text-[#69CFC3] rounded-xl hover:bg-black/20 p-3"
                     to="/"
                     onClick={() => setNavbar(!navbar)}
                   >
