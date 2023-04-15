@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../assets/react.svg";
+import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
@@ -7,12 +7,12 @@ const NavBar = () => {
   return (
     <>
       {/* Displays the below navigation for desktop devices */}
-      <nav className="hidden z-50 lg:flex absolute top-0 w-full px-6 py-2">
-        <div className="w-30 ">
+      <nav className="hidden backdrop-blur-xl fixed z-50 md:flex lg:flex  top-0 w-full px-6 py-2 ">
+        <div className="w-24 ">
           <a href="/">
             <img
-              src=""
-              className="lg:w-[80px] lg:h-[60px] w-[60px] h-[40px]"
+              src={Logo}
+              className="lg:w-[60px] lg:h-[60px] w-[40px] h-[40px]"
               alt="logo"
             />
           </a>
@@ -26,10 +26,18 @@ const NavBar = () => {
             </li>
             <li>
               <Link
-                className="text-black bg-white p-2 rounded-xl hover:bg-black/30  hover:text-white hover:border"
-                to="/register"
+                className="text-white w-20 bg-transparent  border p-2 rounded-xl hover:bg-white  hover:text-[#69CFC3] hover:border"
+                to="/login"
               >
-                Register
+                Login
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-white bg-[#69CFC3] p-2 rounded-xl hover:bg-white  hover:text-[#69CFC3] hover:border"
+                to="/signup"
+              >
+                Sign Up
               </Link>
             </li>
           </ul>
@@ -37,14 +45,14 @@ const NavBar = () => {
       </nav>
 
       {/* Displays the below navigation for mobile devices */}
-      <nav className="z-50 w-full shadow-xl pb-4 pt-2 bg-zinc-900 fixed block lg:hidden">
+      <nav className="z-50 w-full shadow-xl  backdrop-blur-xl pb-4 pt-2  fixed block md:hidden lg:hidden">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link to="/">
                 <h2 className="text-2xl font-bold">
                   {" "}
-                  <img src={Logo} className="w-[70px] h-[50px]" />
+                  <img src={Logo} className="w-[50px] h-[50px]" />
                 </h2>
               </Link>
               <div className="md:hidden">
@@ -101,14 +109,22 @@ const NavBar = () => {
                     Home
                   </Link>
                 </li>
-        
                 <li>
                   <Link
-                    className="text-black w-full bg-white p-2 rounded-xl hover:bg-black/30  hover:text-white hover:border"
-                    to="/register"
+                    className="text-white w-full bg-transparent border p-2 rounded-xl hover:bg-white hover:text-[#69CFC3] hover:border"
+                    to="/login"
                     onClick={() => setNavbar(!navbar)}
                   >
-                    Register
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-white w-full bg-[#69CFC3] p-2 rounded-xl hover:bg-white  hover:text-[#69CFC3] hover:border"
+                    to="/signup"
+                    onClick={() => setNavbar(!navbar)}
+                  >
+                    Sign Up
                   </Link>
                 </li>
               </ul>
