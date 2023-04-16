@@ -2,7 +2,7 @@ import React from "react";
 
 const Signup = () => {
   return (
-    <section className="h-full w-full">
+    <section className="h-full w-full overflow-y-scroll">
       <div className="grid grid-cols-1 h-full lg:grid-cols-2">
         <div className="relative flex items-end px-4 pb-10 pt-60 sm:pb-16 md:justify-center lg:pb-24 sm:px-6 lg:px-8">
           <div className="absolute inset-0">
@@ -120,7 +120,7 @@ const Signup = () => {
               </a>
             </p>
 
-            <form action="#" method="POST" className="mt-8">
+            <form action="https://insynk-pbwdwzxtwa-el.a.run.app/signUp/" method="POST" className="mt-8">
               <div className="space-y-5">
                 <div>
                   <label
@@ -134,6 +134,7 @@ const Signup = () => {
                     <input
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                       type="text"
+                      name="username"
                       placeholder="Enter You Full Name"
                       id="name"
                     ></input>
@@ -152,6 +153,7 @@ const Signup = () => {
                     <input
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                       type="email"
+                      name="email"
                       placeholder="Enter Your Email"
                       id="email"
                     ></input>
@@ -169,7 +171,8 @@ const Signup = () => {
                   <div className="mt-2.5">
                     <input
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                      type="email"
+                      type="password"
+                      name="password"
                       placeholder="Enter Your Password"
                       id="password"
                     ></input>
@@ -177,40 +180,38 @@ const Signup = () => {
                 </div>
                 <div>
                   <label
-                    htmlFor="Type"
                     className="text-base font-medium text-gray-900 dark:text-gray-200"
                   >
                     {" "}
                     Account Type{" "}
                   </label>
                   <div className="mt-2.5 flex flex-row justify-between">
-                    <div class="flex items-center px-16  border border-gray-200 rounded dark:border-gray-700">
+                    <div className="flex items-center px-16  border border-gray-200 rounded dark:border-gray-700">
                       <input
-                        id="bordered-radio-1"
+                        id="learner"
                         type="radio"
-                        value=""
-                        name="bordered-radio"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        value="learner"
+                        name="userType"
+                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                       />
                       <label
-                        for="bordered-radio-1"
-                        class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                        htmlFor="learner"
+                        className="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                       >
                         Learner
                       </label>
                     </div>
-                    <div class="flex items-center px-16 border border-gray-200 rounded dark:border-gray-700">
+                    <div className="flex items-center px-16 border border-gray-200 rounded dark:border-gray-700">
                       <input
-                        checked
-                        id="bordered-radio-2"
+                        id="organiser"
                         type="radio"
-                        value=""
-                        name="bordered-radio"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        value="organiser"
+                        name="userType"
+                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                       />
                       <label
-                        for="bordered-radio-2"
-                        class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                        htmlFor="organiser"
+                        className="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                       >
                       Organiser
                       </label>
@@ -219,7 +220,7 @@ const Signup = () => {
                 </div>
 
                 <div>
-                  <button className="w-full inline-flex items-center justify-center rounded-md bg-indigo-600 px-3.5 py-2.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500">
+                  <button className="w-full inline-flex items-center justify-center rounded-md bg-indigo-600 px-3.5 py-2.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500" type="submit">
                     Get started
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

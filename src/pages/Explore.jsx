@@ -29,7 +29,7 @@ const Data = [
 ];
 const Explore = () => {
   return (
-    <div className='w-full mx-auto'>
+    <div className='w-full mx-auto overflow-y-scroll'>
         <SearchBar/>
         <p className='flex justify-center text-4xl p-10'>Categories</p>
         <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-5">

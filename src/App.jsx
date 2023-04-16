@@ -14,7 +14,7 @@ import Explore from "./pages/Explore";
 import Sidebar from "./components/Sidebar";
 import Events from "./pages/Events";
 import Certificate from "./pages/Certificate";
-import MyEvents from "./pages/MyEvents";
+import CreateEvents from "./pages/CreateEvents";
 const App = () => {
   const location = useLocation();
   const [user, setUser] = useState([]);
@@ -37,7 +37,7 @@ const App = () => {
         <Route path={"/logged/events/"} element={<Events />} />
         <Route path={"/logged/compiler/"} element={<Compiler />} />
         <Route path={"/logged/certificate/"} element={<Certificate />} />
-        <Route path={"/logged/myevents/"} element={<MyEvents />} />
+        <Route path={"/logged/createevents/"} element={<CreateEvents />} />
       </Routes>
     </div>
   );

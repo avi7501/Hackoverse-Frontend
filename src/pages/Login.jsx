@@ -1,8 +1,50 @@
 import React from "react";
-
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+  const handleSubmit= async (e) =>{
+    url:
+    
+
+  try {
+    const response = await axios.post(
+      "https://insynk-pbwdwzxtwa-el.a.run.app/signIn/",
+      JSON.stringify({ user, password}),
+      {
+        headers: { "Content-Type": "application/json" },
+        withCredentials: true,
+      }
+    );
+    localStorage.setItem("user",response.data.user)
+    window.location.redirect('/')
+  } catch (err) {
+    if (!err?.response) {
+      setErrMsg("No Server Response");
+    } else if (err.response?.status === 409) {
+      setErrMsg("Username Taken");
+    } else {
+      setErrMsg("Registration Failed");
+    }
+    errRef.current.focus();
+  }
+  }
+  // useEffect(() => {
+  //   async function asyncFunc() {
+  //     axios
+  //       .get("https://api.tiarasjec.in/show_bot_events/")
+  //       .then((response) => {
+  //         setEventsMap(response.data);
+  //       });
+
+  //     const script = document.createElement("script");
+  //     script.src = "https://checkout.razorpay.com/v1/checkout.js";
+  //     script.async = true;
+  //     document.body.appendChild(script);
+  //   }
+  //   asyncFunc();
+  // }, []);
   return (
-    <section className="h-full w-full">
+    <section className="h-full w-full overflow-y-scroll">
       <div className="grid grid-cols-1 h-full lg:grid-cols-2">
         <div className="relative flex items-end px-4 pb-10 pt-60 sm:pb-16 md:justify-center lg:pb-24 sm:px-6 lg:px-8">
           <div className="absolute inset-0">
@@ -120,11 +162,11 @@ const Login = () => {
               </a>
             </p>
 
-            <form action="#" method="POST" className="mt-8">
+            <form onSubmit={handleSubmit} className="mt-8">
               <div className="space-y-5">
                 <div>
                   <label
-                    htmlFor=""
+                    htmlFor="email"
                     className="text-base font-medium text-gray-900 dark:text-gray-200"
                   >
                     {" "}
@@ -134,6 +176,8 @@ const Login = () => {
                     <input
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                       type="email"
+                      id="email"
+                      name="email"
                       placeholder="Email"
                     ></input>
                   </div>
@@ -142,26 +186,28 @@ const Login = () => {
                 <div>
                   <div className="flex items-center justify-between">
                     <label
-                      htmlFor=""
+                      htmlFor="password"
                       className="text-base font-medium text-gray-900 dark:text-gray-200"
                     >
                       {" "}
                       Password{" "}
                     </label>
 
-                    <a
+                    {/* <a
                       href="#"
                       title=""
                       className="text-sm font-medium text-indigo-600 hover:underline hover:text-indigo-700 focus:text-indigo-700"
                     >
                       {" "}
                       Forgot password?{" "}
-                    </a>
+                    </a> */}
                   </div>
                   <div className="mt-2.5">
                     <input
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                       type="password"
+                      id="password"
+                      name="password"
                       placeholder="Password"
                     ></input>
                   </div>
