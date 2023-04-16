@@ -12,7 +12,9 @@ import Dashboard from "./pages/Dashboard";
 import Compiler from "./pages/Compiler";
 import Explore from "./pages/Explore";
 import Sidebar from "./components/Sidebar";
-import Events from "./pages/Explore";
+import Events from "./pages/Events";
+import Certificate from "./pages/Certificate";
+import MyEvents from "./pages/MyEvents";
 const App = () => {
   const location = useLocation();
   const [user, setUser] = useState([]);
@@ -24,7 +26,7 @@ const App = () => {
   return (
     <div className="flex flex-row h-full w-full">
       {!location.pathname.includes("/logged/") && <NavBar />}
-      {location.pathname.includes("/logged/") && <Sidebar />}
+      {location.pathname.includes("/logged/") && <div className="h-full"><Sidebar /></div>}
       <Routes>
         <Route path="/" element={<Home/>} />
         {/* element={<Events/>}/> */}
@@ -34,6 +36,8 @@ const App = () => {
         <Route path={"/logged/explore/"} element={<Explore />} />
         <Route path={"/logged/events/"} element={<Events />} />
         <Route path={"/logged/compiler/"} element={<Compiler />} />
+        <Route path={"/logged/certificate/"} element={<Certificate />} />
+        <Route path={"/logged/myevents/"} element={<MyEvents />} />
       </Routes>
     </div>
   );

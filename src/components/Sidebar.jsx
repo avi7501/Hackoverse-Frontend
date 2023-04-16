@@ -8,15 +8,16 @@ import {
   ArrowLeftOnRectangleIcon,
   MagnifyingGlassIcon,
   CalendarIcon,
+  AcademicCapIcon,
 } from "@heroicons/react/24/outline";
 
 import Logo from '../assets/logo.png'
 export const Sidebar = () => {
-  const type="learner"
+  const type="organiser"
   return (
     <>
     {type==="learner" && 
-    <aside className="flex flex-col w-64 h-full px-5 py-8 overflow-y-auto bg-white  dark:bg-black/20 backdrop-blur-3xl dark:border-gray-700">
+    <aside className="flex flex-col w-64 h-full px-5 py-8 overflow-y-auto bg-black/20 backdrop-blur-3xl border-gray-700">
       <a className="flex flex-row text-white hover:text-white text-2xl justify-start
        items-center gap-4" href="/">
       <img src={Logo} className="w-[30px] h-[30px]" /> <p>InSynk</p>
@@ -51,14 +52,21 @@ export const Sidebar = () => {
             <CalendarIcon  className="w-5 h-5" />
             <span className="mx-2 text-sm font-medium">Events</span>
           </a>
-
           <a
+            className="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
+            href="/logged/certificate"
+          >
+            <AcademicCapIcon  className="w-5 h-5" />
+            <span className="mx-2 text-sm font-medium">Certificate</span>
+          </a>
+
+          {/* <a
             className="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
             href="/logged/settings/"
           >
             <WrenchScrewdriverIcon className="w-5 h-5" />
             <span className="mx-2 text-sm font-medium">Settings</span>
-          </a>
+          </a> */}
         </nav>
         <div className="mt-6">
           <div className="flex items-center justify-between mt-6">
@@ -94,7 +102,7 @@ export const Sidebar = () => {
         <nav className="flex-1 -mx-3 space-y-3 ">
           <a
             className="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-            href="#"
+            href="/logged/dashboard/"
           >
             <HomeIcon className="w-5 h-5" />
             <span className="mx-2 text-sm font-medium">Dashboard</span>
@@ -102,19 +110,26 @@ export const Sidebar = () => {
 
           <a
             className="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-            href="#"
+            href="/logged/myevents/"
           >
             <CalendarIcon  className="w-5 h-5" />
             <span className="mx-2 text-sm font-medium"> My Events</span>
           </a>
-
+          <a
+            className="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
+            href="/logged/certificate"
+          >
+            <AcademicCapIcon  className="w-5 h-5" />
+            <span className="mx-2 text-sm font-medium">Certificate</span>
+          </a>
+{/* 
           <a
             className="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
             href="#"
           >
             <WrenchScrewdriverIcon className="w-5 h-5" />
             <span className="mx-2 text-sm font-medium">Settings</span>
-          </a>
+          </a> */}
         </nav>
         <div className="mt-6">
      
