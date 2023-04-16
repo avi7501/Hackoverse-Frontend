@@ -38,8 +38,7 @@ const uEvents = [
   },
 ];
 const Dashboard = () => {
-  const dp =
-    "https://media.licdn.com/dms/image/D5603AQFlt764A_-MNA/profile-displayphoto-shrink_800_800/0/1675886051338?e=2147483647&v=beta&t=TT6uSrKDeOUXQfkGqcxUNwXXe8CK68yCQ2YVAglABa8";
+  const dp ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzPb_pSj-ir-9eB6mi0lVJdQP1KKHiB8fRBS1CbmOXGd9Z1FEGMJHbEKhahwhWLGSaEXY&usqp=CAU";
   return (
     <>
       <div className="w-full overflow-y-auto">
